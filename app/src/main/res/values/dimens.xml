@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btnMargin">5dp</dimen>
+    <dimen name="mainPadding">10dp</dimen>
+    <dimen name="mainBtnTextSize">25sp</dimen>
+    <dimen name="largeBtnTextSize">30dp</dimen>
+</resources>

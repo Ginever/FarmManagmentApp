@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainnavigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.farmmanagmentapp.homeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_veiwDataHome"
+            app:destination="@id/veiwDataHome" />
+        <action
+            android:id="@+id/action_homeFragment_to_feedbackHome"
+            app:destination="@id/feedbackHome" />
+        <action
+            android:id="@+id/action_homeFragment_to_massActionsHome"
+            app:destination="@id/massActionsHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/veiwDataHome"
+        android:name="com.example.farmmanagmentapp.veiwDataHome"
+        android:label="fragment_veiw_data_home"
+        tools:layout="@layout/fragment_veiw_data_home" />
+    <fragment
+        android:id="@+id/feedbackHome"
+        android:name="com.example.farmmanagmentapp.feedbackHome"
+        android:label="fragment_feedback_home"
+        tools:layout="@layout/fragment_feedback_home" >
+        <action
+            android:id="@+id/action_feedbackHome_to_feedbackThankYou"
+            app:destination="@id/feedbackThankYou2"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackThankYou2"
+        android:name="com.example.farmmanagmentapp.feedbackThankYou"
+        android:label="fragment_feedback_thank_you"
+        tools:layout="@layout/fragment_feedback_thank_you" >
+        <action
+            android:id="@+id/action_feedbackThankYou2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/massActionsHome"
+        android:name="com.example.farmmanagmentapp.massActionsHome"
+        android:label="fragment_mass_actions_home"
+        tools:layout="@layout/fragment_mass_actions_home" />
+</navigation>
