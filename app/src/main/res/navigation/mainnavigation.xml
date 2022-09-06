@@ -12,19 +12,23 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_veiwDataHome"
-            app:destination="@id/veiwDataHome" />
+            app:destination="@id/viewDataHome" />
         <action
             android:id="@+id/action_homeFragment_to_feedbackHome"
             app:destination="@id/feedbackHome" />
         <action
             android:id="@+id/action_homeFragment_to_massActionsHome"
             app:destination="@id/massActionsHome" />
+        <action
+            android:id="@+id/action_homeFragment_to_matingHome"
+            app:destination="@id/matingHome" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewDataHome5"
+            app:destination="@id/viewDataHome" />
+        <action
+            android:id="@+id/action_homeFragment_to_birthMothersInfo"
+            app:destination="@id/birthMothersInfo" />
     </fragment>
-    <fragment
-        android:id="@+id/veiwDataHome"
-        android:name="com.example.farmmanagmentapp.veiwDataHome"
-        android:label="fragment_veiw_data_home"
-        tools:layout="@layout/fragment_veiw_data_home" />
     <fragment
         android:id="@+id/feedbackHome"
         android:name="com.example.farmmanagmentapp.feedbackHome"
@@ -49,5 +53,75 @@
         android:id="@+id/massActionsHome"
         android:name="com.example.farmmanagmentapp.massActionsHome"
         android:label="fragment_mass_actions_home"
-        tools:layout="@layout/fragment_mass_actions_home" />
+        tools:layout="@layout/fragment_mass_actions_home" >
+        <action
+            android:id="@+id/action_massActionsHome_to_bulkAdd"
+            app:destination="@id/bulkAdd" />
+        <action
+            android:id="@+id/action_massActionsHome_to_exportData"
+            app:destination="@id/exportData" />
+        <action
+            android:id="@+id/action_massActionsHome_to_importData"
+            app:destination="@id/importData" />
+    </fragment>
+    <fragment
+        android:id="@+id/bulkAdd"
+        android:name="com.example.farmmanagmentapp.bulkAdd"
+        android:label="fragment_bulk_add"
+        tools:layout="@layout/fragment_bulk_add" >
+        <action
+            android:id="@+id/action_bulkAdd_to_massActionsHome"
+            app:destination="@id/massActionsHome"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment" />
+    <action
+        android:id="@+id/action_global_feedbackHome"
+        app:destination="@id/feedbackHome" />
+    <action
+        android:id="@+id/action_global_veiwDataHome"
+        app:destination="@id/viewDataHome" />
+    <action
+        android:id="@+id/action_global_massActionsHome"
+        app:destination="@id/massActionsHome" />
+    <fragment
+        android:id="@+id/exportData"
+        android:name="com.example.farmmanagmentapp.ExportData"
+        android:label="fragment_export_data"
+        tools:layout="@layout/fragment_export_data" >
+        <action
+            android:id="@+id/action_exportData_to_massActionsHome"
+            app:destination="@id/massActionsHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/importData"
+        android:name="com.example.farmmanagmentapp.importData"
+        android:label="importData" >
+        <action
+            android:id="@+id/action_importData_to_massActionsHome"
+            app:destination="@id/massActionsHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/matingHome"
+        android:name="com.example.farmmanagmentapp.MatingHome"
+        android:label="fragment_mating_home"
+        tools:layout="@layout/fragment_mating_home" />
+    <fragment
+        android:id="@+id/viewDataHome"
+        android:name="com.example.farmmanagmentapp.ViewDataHome"
+        android:label="fragment_view_data_home"
+        tools:layout="@layout/fragment_view_data_home" />
+    <fragment
+        android:id="@+id/birthMothersInfo"
+        android:name="com.example.farmmanagmentapp.BirthMothersInfo"
+        android:label="fragment_birth_mothers_info"
+        tools:layout="@layout/fragment_birth_mothers_info" />
+    <action
+        android:id="@+id/action_global_birthMothersInfo"
+        app:destination="@id/birthMothersInfo" />
+    <action
+        android:id="@+id/action_global_matingHome"
+        app:destination="@id/matingHome" />
 </navigation>

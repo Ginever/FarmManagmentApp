@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_main_menu"
+        android:title="Main Menu" />
+
+    <item
+        android:id="@+id/nav_view_data"
+        android:title="View Data" />
+
+    <item
+        android:id="@+id/nav_record_birth"
+        android:title="Record a Birth" />
+    <item
+        android:id="@+id/nav_mating"
+        android:title="Mating" />
+    <item
+        android:id="@+id/nav_medicine"
+        android:title="Medicine" />
+    <item
+        android:id="@+id/nav_mass_actions"
+        android:title="Mass Actions" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:title="Feedback" />
+
+</menu>

@@ -4,4 +4,6 @@
     <dimen name="mainPadding">10dp</dimen>
     <dimen name="mainBtnTextSize">25sp</dimen>
     <dimen name="largeBtnTextSize">30dp</dimen>
+    <dimen name="largeBtnMargin">15dp</dimen>
+    <dimen name="headerTextSize">30dp</dimen>
 </resources>

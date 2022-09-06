@@ -4,61 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MatingHome"
     android:padding="@dimen/mainPadding">
 
+
     <Button
-        android:id="@+id/bulkAddBtn"
+        android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/round_button"
         android:textSize="@dimen/mainBtnTextSize"
+        android:background="@drawable/round_button"
         android:layout_margin="@dimen/btnMargin"
-        android:text="Bulk Add"
-        app:layout_constraintBottom_toTopOf="@+id/button12"
+        android:text="Add Male(s)"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/round_button"
         android:textSize="@dimen/mainBtnTextSize"
+        android:background="@drawable/round_button"
         android:layout_margin="@dimen/btnMargin"
-        android:text="Bulk Remove"
-        app:layout_constraintBottom_toTopOf="@+id/exportDataBtn"
+        android:text="Remove Male(s)"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bulkAddBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
-        android:id="@+id/exportDataBtn"
+        android:id="@+id/button3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/round_button"
         android:textSize="@dimen/mainBtnTextSize"
-        android:layout_margin="@dimen/btnMargin"
-        android:text="Export Data"
-        app:layout_constraintBottom_toTopOf="@+id/importDataBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
-
-    <Button
-        android:id="@+id/importDataBtn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:background="@drawable/round_button"
-        android:textSize="@dimen/mainBtnTextSize"
         android:layout_margin="@dimen/btnMargin"
-        android:text="Import Data"
+        android:text="Known breeding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exportDataBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

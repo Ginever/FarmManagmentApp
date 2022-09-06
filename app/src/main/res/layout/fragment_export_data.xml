@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/mainPadding"
+    tools:context=".ExportData">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export data as:"
+        android:textSize="@dimen/largeBtnTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/JSONUploadBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_button_transperent"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_save_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/JSONUploadBtn"
+        app:layout_constraintEnd_toEndOf="@+id/JSONUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/JSONUploadBtn"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="JSON"
+        android:textSize="@dimen/mainBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/JSONUploadBtn"
+        app:layout_constraintStart_toStartOf="@+id/JSONUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/JSONUploadBtn" />
+
+    <Button
+        android:id="@+id/CSVUploadBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_button_transperent"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JSONUploadBtn" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_save_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/CSVUploadBtn"
+        app:layout_constraintEnd_toEndOf="@+id/CSVUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/CSVUploadBtn"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="CSV"
+        android:textSize="@dimen/mainBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/CSVUploadBtn"
+        app:layout_constraintStart_toStartOf="@+id/CSVUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/CSVUploadBtn" />
+
+    <Button
+        android:id="@+id/XMLUploadBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_button_transperent"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CSVUploadBtn" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_save_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/XMLUploadBtn"
+        app:layout_constraintEnd_toEndOf="@+id/XMLUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/XMLUploadBtn"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="XML"
+        android:textSize="@dimen/mainBtnTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/XMLUploadBtn"
+        app:layout_constraintStart_toStartOf="@+id/XMLUploadBtn"
+        app:layout_constraintTop_toTopOf="@+id/XMLUploadBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
