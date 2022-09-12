@@ -1,28 +1,42 @@
 package com.example.farmmanagmentapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
+import com.example.farmmanagmentapp.databinding.FragmentBulkRemoveBinding
+import io.realm.Realm
+import org.jetbrains.annotations.TestOnly
 
-class BirthMothersInfo : Fragment() {
+class BulkRemove : Fragment() {
+
+    private var binding: FragmentBulkRemoveBinding? = null
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_birth_mothers_info, container, false)
+
+        binding
+
+        val rootView = inflater.inflate(R.layout.fragment_bulk_remove,container,false)
+
 
         val scrollView = rootView.findViewById<ScrollView>(R.id.scrollView)
+
         val linearLayout = rootView.findViewById<LinearLayout>(R.id.linearLayout)
         val staticEditText = rootView.findViewById<EditText>(R.id.staticSearchBarEditText)
         val staticImageView = rootView.findViewById<ImageView>(R.id.staticSearchBarImageView)
         val movingEditText = rootView.findViewById<EditText>(R.id.movingSearchBarEditText)
         val movingImageView = rootView.findViewById<ImageView>(R.id.movingSearchBarImageView)
 
-        var textViewFocused = false
+
+        val realm = Realm.getDefaultInstance()
 
         for (i in 1..20){
             val horLayout = LinearLayout(activity)
@@ -37,17 +51,17 @@ class BirthMothersInfo : Fragment() {
                 horLayout.addView(btn)
             }
             linearLayout.addView(horLayout)
-
         }
 
+
         //Making the image disappear when the search bar is clicked
-        movingEditText.setOnFocusChangeListener { _, b -> movingImageView.visibility = View.GONE }
-        staticEditText.setOnFocusChangeListener { _, b -> staticImageView.visibility = View.GONE }
+        movingEditText.setOnFocusChangeListener { _, _ -> movingImageView.visibility = View.GONE }
+        staticEditText.setOnFocusChangeListener { _, _ -> staticImageView.visibility = View.GONE }
 
         //Making the search bar stick to the top of the screen by alternating
         //between a searchbar in the scroll view and a static one
         scrollView.setOnScrollChangeListener { _, _, i, _, i2 ->
-            if ((i<313 && i>i2)||(i<440 && i<i2)){
+            if ((i in (i2 + 1)..312)||(i<440 && i<i2)){
                 movingEditText.visibility = View.VISIBLE
 
                 //Keeping icon hidden if still focused on text edit

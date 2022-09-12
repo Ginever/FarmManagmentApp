@@ -20,14 +20,24 @@ class massActionsHome : Fragment() {
         val bulkAddBtn = rootView.findViewById<Button>(R.id.bulkAddBtn)
         val exportBtn = rootView.findViewById<Button>(R.id.exportDataBtn)
         val importBtn = rootView.findViewById<Button>(R.id.importDataBtn)
+        val bulkRemoveBtn = rootView.findViewById<Button>(R.id.bulkRemoveBtn)
 
         //navigate to Bulk add
         bulkAddBtn.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_massActionsHome_to_bulkAdd)
         }
+
+        //Navigate to Bulk remove
+        bulkRemoveBtn.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_massActionsHome_to_bulkRemove)
+        }
+
+        //Navigate to export data
         exportBtn.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_massActionsHome_to_exportData)
         }
+
+        //Navigate to Import Data
         importBtn.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_massActionsHome_to_importData)
         }

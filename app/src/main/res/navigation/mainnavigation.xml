@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_massActionsHome_to_importData"
             app:destination="@id/importData" />
+        <action
+            android:id="@+id/action_massActionsHome_to_bulkRemove"
+            app:destination="@id/bulkRemove" />
     </fragment>
     <fragment
         android:id="@+id/bulkAdd"
@@ -124,4 +127,10 @@
     <action
         android:id="@+id/action_global_matingHome"
         app:destination="@id/matingHome" />
+    <fragment
+        android:id="@+id/bulkRemove"
+        android:name="com.example.farmmanagmentapp.BulkRemove"
+        android:label="fragment_bulk_remove"
+        tools:layout="@layout/fragment_bulk_remove" >
+    </fragment>
 </navigation>

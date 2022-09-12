@@ -14,14 +14,14 @@
         android:textSize="@dimen/mainBtnTextSize"
         android:layout_margin="@dimen/btnMargin"
         android:text="Bulk Add"
-        app:layout_constraintBottom_toTopOf="@+id/button12"
+        app:layout_constraintBottom_toTopOf="@+id/bulkRemoveBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/bulkRemoveBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/round_button"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintTop_toBottomOf="@+id/bulkRemoveBtn" />
 
     <Button
         android:id="@+id/importDataBtn"

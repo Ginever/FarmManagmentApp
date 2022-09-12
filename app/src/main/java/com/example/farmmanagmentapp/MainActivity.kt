@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.Navigation
 import com.google.android.material.navigation.NavigationView
+import io.realm.Realm
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Startup backend servicex
+        Realm.init(this)
 
         drawerLayout = findViewById(R.id.drawerLayout)
         val navMenu = findViewById<com.google.android.material.navigation.NavigationView>(R.id.nav_menu)
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         actionBarDrawerToggle.syncState()
 
         navMenu.setNavigationItemSelectedListener(this)
+
+        //DataFormater(this)
 
 
 

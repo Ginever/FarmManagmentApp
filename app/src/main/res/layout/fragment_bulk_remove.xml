@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/mainPadding"
+    tools:context=".BulkRemove">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staticSearchBarEditText"
+        tools:layout_editor_absoluteX="10dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Select the animals being removed"
+                android:textAlignment="center"
+                android:textSize="@dimen/headerTextSize" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/movingSearchBarEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_button_transperent"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/mainPadding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/movingSearchBarImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:scaleX="1.75"
+                    android:scaleY="1.75"
+                    android:src="@drawable/ic_baseline_search_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/movingSearchBarEditText"
+                    app:layout_constraintStart_toStartOf="@+id/movingSearchBarEditText"
+                    app:layout_constraintTop_toTopOf="@+id/movingSearchBarEditText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/staticSearchBarEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button_transperent"
+        android:inputType="textPersonName"
+        android:padding="@dimen/mainPadding"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/staticSearchBarImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        android:src="@drawable/ic_baseline_search_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/staticSearchBarEditText"
+        app:layout_constraintStart_toStartOf="@+id/staticSearchBarEditText"
+        app:layout_constraintTop_toTopOf="@+id/staticSearchBarEditText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scrollView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/mainDeathMenu"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        tools:layout_editor_absoluteX="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/button_outline"
+            android:padding="@dimen/mainPadding"
+            android:id="@+id/firstMenu">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/mainBtnTextSize"
+                android:text="Why are you archicing these animals?" />
+
+            <Button
+                android:id="@+id/soldBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sold"
+                android:background="@drawable/round_button"
+                android:layout_margin="@dimen/btnMargin"/>
+
+            <Button
+                android:id="@+id/deceasedBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deceased"
+                android:background="@drawable/round_button"
+                android:layout_margin="@dimen/btnMargin"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/secoundLayout"
+            android:background="@drawable/button_outline"
+            android:padding="@dimen/mainPadding"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/mainBtnTextSize"
+                android:text="Cause of deaths" />
+
+            <Button
+                android:id="@+id/meatBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Killed for meat"
+                android:background="@drawable/round_button"
+                android:layout_margin="@dimen/btnMargin"/>
+
+            <Button
+                android:id="@+id/diseaseBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disease"
+                android:background="@drawable/round_button"
+                android:layout_margin="@dimen/btnMargin"/>
+
+            <Button
+                android:id="@+id/oldAgeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Old Age"
+                android:background="@drawable/round_button"
+                android:layout_margin="@dimen/btnMargin"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:rotation="180"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/triangle" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
