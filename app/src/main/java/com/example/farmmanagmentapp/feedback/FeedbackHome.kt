@@ -1,4 +1,4 @@
-package com.example.farmmanagmentapp
+package com.example.farmmanagmentapp.feedback
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.Navigation
+import com.example.farmmanagmentapp.R
 
 class feedbackHome : Fragment() {
     override fun onCreateView(

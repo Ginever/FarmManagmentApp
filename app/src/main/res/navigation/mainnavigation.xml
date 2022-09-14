@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/feedbackHome"
-        android:name="com.example.farmmanagmentapp.feedbackHome"
+        android:name="com.example.farmmanagmentapp.feedback.feedbackHome"
         android:label="fragment_feedback_home"
         tools:layout="@layout/fragment_feedback_home" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/feedbackThankYou2"
-        android:name="com.example.farmmanagmentapp.feedbackThankYou"
+        android:name="com.example.farmmanagmentapp.feedback.feedbackThankYou"
         android:label="fragment_feedback_thank_you"
         tools:layout="@layout/fragment_feedback_thank_you" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/massActionsHome"
-        android:name="com.example.farmmanagmentapp.massActionsHome"
+        android:name="com.example.farmmanagmentapp.massAction.massActionsHome"
         android:label="fragment_mass_actions_home"
         tools:layout="@layout/fragment_mass_actions_home" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/bulkAdd"
-        android:name="com.example.farmmanagmentapp.bulkAdd"
+        android:name="com.example.farmmanagmentapp.massAction.bulkAdd"
         android:label="fragment_bulk_add"
         tools:layout="@layout/fragment_bulk_add" >
         <action
@@ -91,7 +91,7 @@
         app:destination="@id/massActionsHome" />
     <fragment
         android:id="@+id/exportData"
-        android:name="com.example.farmmanagmentapp.ExportData"
+        android:name="com.example.farmmanagmentapp.massAction.ExportData"
         android:label="fragment_export_data"
         tools:layout="@layout/fragment_export_data" >
         <action
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/importData"
-        android:name="com.example.farmmanagmentapp.importData"
+        android:name="com.example.farmmanagmentapp.massAction.importData"
         android:label="importData" >
         <action
             android:id="@+id/action_importData_to_massActionsHome"
@@ -113,9 +113,13 @@
         tools:layout="@layout/fragment_mating_home" />
     <fragment
         android:id="@+id/viewDataHome"
-        android:name="com.example.farmmanagmentapp.ViewDataHome"
+        android:name="com.example.farmmanagmentapp.viewData.ViewDataHome"
         android:label="fragment_view_data_home"
-        tools:layout="@layout/fragment_view_data_home" />
+        tools:layout="@layout/fragment_view_data_home" >
+        <action
+            android:id="@+id/action_viewDataHome_to_newAnimal"
+            app:destination="@id/newAnimal" />
+    </fragment>
     <fragment
         android:id="@+id/birthMothersInfo"
         android:name="com.example.farmmanagmentapp.BirthMothersInfo"
@@ -129,8 +133,13 @@
         app:destination="@id/matingHome" />
     <fragment
         android:id="@+id/bulkRemove"
-        android:name="com.example.farmmanagmentapp.BulkRemove"
+        android:name="com.example.farmmanagmentapp.massAction.BulkRemove"
         android:label="fragment_bulk_remove"
         tools:layout="@layout/fragment_bulk_remove" >
     </fragment>
+    <fragment
+        android:id="@+id/newAnimal"
+        android:name="com.example.farmmanagmentapp.viewData.newAnimal"
+        android:label="fragment_new_animal"
+        tools:layout="@layout/fragment_new_animal" />
 </navigation>

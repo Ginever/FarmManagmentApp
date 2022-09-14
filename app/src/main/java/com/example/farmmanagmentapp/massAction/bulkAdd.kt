@@ -1,16 +1,16 @@
-package com.example.farmmanagmentapp
+package com.example.farmmanagmentapp.massAction
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.NumberPicker
 import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.Navigation
+import com.example.farmmanagmentapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class bulkAdd : Fragment() {

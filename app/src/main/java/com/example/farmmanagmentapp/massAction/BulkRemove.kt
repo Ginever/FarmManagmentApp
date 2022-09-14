@@ -1,15 +1,14 @@
-package com.example.farmmanagmentapp
+package com.example.farmmanagmentapp.massAction
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.example.farmmanagmentapp.R
 import com.example.farmmanagmentapp.databinding.FragmentBulkRemoveBinding
 import io.realm.Realm
-import org.jetbrains.annotations.TestOnly
 
 class BulkRemove : Fragment() {
 

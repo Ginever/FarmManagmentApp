@@ -8,6 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.Navigation
 import com.google.android.material.navigation.NavigationView
 import io.realm.Realm
+import io.realm.RealmConfiguration
+
+
+
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
@@ -17,8 +21,17 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Startup backend servicex
+        //Startup backend service
         Realm.init(this)
+
+        val config = RealmConfiguration.Builder()
+            .name("default-realm")
+            .allowQueriesOnUiThread(true)
+            .allowWritesOnUiThread(true)
+            .compactOnLaunch()
+            .build()
+
+        Realm.setDefaultConfiguration(config)
 
         drawerLayout = findViewById(R.id.drawerLayout)
         val navMenu = findViewById<com.google.android.material.navigation.NavigationView>(R.id.nav_menu)

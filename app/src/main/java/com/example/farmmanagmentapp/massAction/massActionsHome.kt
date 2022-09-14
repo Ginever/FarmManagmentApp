@@ -1,13 +1,13 @@
-package com.example.farmmanagmentapp
+package com.example.farmmanagmentapp.massAction
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
 import androidx.navigation.Navigation
+import com.example.farmmanagmentapp.R
 
 class massActionsHome : Fragment() {
     override fun onCreateView(

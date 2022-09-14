@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/mainPadding"
-    tools:context=".BulkRemove">
+    tools:context=".massAction.BulkRemove">
 
     <ScrollView
         android:id="@+id/scrollView"
