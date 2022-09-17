@@ -8,7 +8,7 @@
     tools:context=".viewData.ViewDataHome">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/searchBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_button_transperent"
@@ -20,32 +20,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/searchIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:scaleX="1.75"
         android:scaleY="1.75"
         android:src="@drawable/ic_baseline_search_24"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+        app:layout_constraintBottom_toBottomOf="@+id/searchBar"
+        app:layout_constraintStart_toStartOf="@+id/searchBar"
+        app:layout_constraintTop_toTopOf="@+id/searchBar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/herdRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:listitem="@layout/item_animal"/>
+        app:layout_constraintTop_toBottomOf="@+id/searchBar"
+        tools:listitem="@layout/item_animal" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addAnimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -3,4 +3,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string-array name="gender_selector_items">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

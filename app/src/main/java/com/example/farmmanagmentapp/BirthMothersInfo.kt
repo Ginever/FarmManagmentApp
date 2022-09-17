@@ -41,8 +41,8 @@ class BirthMothersInfo : Fragment() {
         }
 
         //Making the image disappear when the search bar is clicked
-        movingEditText.setOnFocusChangeListener { _, b -> movingImageView.visibility = View.GONE }
-        staticEditText.setOnFocusChangeListener { _, b -> staticImageView.visibility = View.GONE }
+        movingEditText.setOnFocusChangeListener { _, _ -> movingImageView.visibility = View.GONE }
+        staticEditText.setOnFocusChangeListener { _, _ -> staticImageView.visibility = View.GONE }
 
         //Making the search bar stick to the top of the screen by alternating
         //between a searchbar in the scroll view and a static one

@@ -9,6 +9,10 @@ import androidx.navigation.Navigation
 import com.google.android.material.navigation.NavigationView
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.exceptions.RealmMigrationNeededException
+
+
+
 
 
 
@@ -28,13 +32,15 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             .name("default-realm")
             .allowQueriesOnUiThread(true)
             .allowWritesOnUiThread(true)
+            //TODO remove this when code writing finished as could delete user data
+            .deleteRealmIfMigrationNeeded()
             .compactOnLaunch()
             .build()
 
         Realm.setDefaultConfiguration(config)
 
         drawerLayout = findViewById(R.id.drawerLayout)
-        val navMenu = findViewById<com.google.android.material.navigation.NavigationView>(R.id.nav_menu)
+        val navMenu = findViewById<NavigationView>(R.id.nav_menu)
 
         //Set up custom toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -47,10 +53,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         actionBarDrawerToggle.syncState()
 
         navMenu.setNavigationItemSelectedListener(this)
-
-        //DataFormater(this)
-
-
 
         //setToolBarTitle("Home")
     }

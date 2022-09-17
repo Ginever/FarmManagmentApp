@@ -119,6 +119,9 @@
         <action
             android:id="@+id/action_viewDataHome_to_newAnimal"
             app:destination="@id/newAnimal" />
+        <action
+            android:id="@+id/action_viewDataHome_to_viewAnimal"
+            app:destination="@id/viewAnimal" />
     </fragment>
     <fragment
         android:id="@+id/birthMothersInfo"
@@ -142,4 +145,25 @@
         android:name="com.example.farmmanagmentapp.viewData.newAnimal"
         android:label="fragment_new_animal"
         tools:layout="@layout/fragment_new_animal" />
+    <fragment
+        android:id="@+id/viewAnimal"
+        android:name="com.example.farmmanagmentapp.viewData.ViewAnimal"
+        android:label="fragment_view_animal"
+        tools:layout="@layout/fragment_view_animal" >
+        <argument
+            android:name="animalId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewAnimal_to_editAnimal"
+            app:destination="@id/editAnimal" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAnimal"
+        android:name="com.example.farmmanagmentapp.viewData.EditAnimal"
+        android:label="fragment_edit_animal"
+        tools:layout="@layout/fragment_edit_animal" >
+        <argument
+            android:name="animalId"
+            app:argType="string" />
+    </fragment>
 </navigation>

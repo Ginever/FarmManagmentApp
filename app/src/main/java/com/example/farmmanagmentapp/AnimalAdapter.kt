@@ -1,18 +1,18 @@
 package com.example.farmmanagmentapp
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.farmmanagmentapp.databinding.ItemAnimalBinding
 import com.example.farmmanagmentapp.realm.Animal
-import kotlinx.coroutines.NonDisposableHandle.parent
-import javax.inject.Inject
+import com.example.farmmanagmentapp.viewData.ViewDataHomeDirections
+import java.util.*
 
-class AnimalAdapter(private val animals: List<Animal>) : RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>() {
+class AnimalAdapter : RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>() {
 
-    //private val animals = mutableListOf<Animal>()
+    private val animals = mutableListOf<Animal>()
+    private lateinit var directions: ViewDataHomeDirections
 
     // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): AnimalViewHolder {
@@ -27,6 +27,13 @@ class AnimalAdapter(private val animals: List<Animal>) : RecyclerView.Adapter<An
         viewHolder.bind(animal)
     }
 
+    //Add items to the dataset and update the recyclerView
+    fun addItems(petsToAdopt: List<Animal>) {
+        animals.clear()
+        animals.addAll(petsToAdopt)
+        notifyDataSetChanged()
+    }
+
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = animals.size
 
@@ -36,17 +43,27 @@ class AnimalAdapter(private val animals: List<Animal>) : RecyclerView.Adapter<An
 
     inner class AnimalViewHolder(private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root){
 
+        //Set property of the animal item to contain the dataset information
         fun bind(animal: Animal){
             with(binding){
                 name.text = animal.name
                 if(animal.boy){
-                    gender.text = "Male"
+                    if (animal.sterilised){
+                        genderImageView.setBackgroundResource(R.drawable.ic_male_castrated_icon)
+                    } else {
+                        genderImageView.setBackgroundResource(R.drawable.ic_male_icon)
+                    }
                 } else {
-                    gender.text = "Female"
+                    if (animal.sterilised){
+                        genderImageView.setBackgroundResource(R.drawable.ic_female_castrated_icon)
+                    } else {
+                        genderImageView.setBackgroundResource(R.drawable.ic_female_icon)
+                    }
                 }
+                dateOfBirthTextView.text = animal.dateOfBirth.substring(3)
 
                 mainBtn.setOnClickListener{
-                    Log.d("It works", "It works!!!!!")
+                    Navigation.findNavController(it).navigate(ViewDataHomeDirections.actionViewDataHomeToViewAnimal(animal.id))
                 }
             }
         }
