@@ -12,7 +12,7 @@ import java.util.*
 
 class AnimalDatabaseOperations :ViewModel(){
 
-    fun insertAnimal(
+    suspend fun insertAnimal(
         id: String = ObjectId().toHexString(),
         name: String,
         nickName: String = "",
@@ -24,14 +24,12 @@ class AnimalDatabaseOperations :ViewModel(){
         // 1.
         val realm = Realm.getDefaultInstance()
 
-        // 2.
-        viewModelScope.launch {
-            realm.executeTransactionAwait(Dispatchers.IO) { realmTransaction ->
-                // 3.
-                val pet = AnimalRealm(name = name, nickName = nickName, boy = boy, id = id, dateOfBirth = dateOfBirth, sterilised = sterilised, rating = rating)
-                // 4.
-                realmTransaction.insert(pet)
-            }
+
+        realm.executeTransactionAwait(Dispatchers.IO) { realmTransaction ->
+            // 3.
+            val pet = AnimalRealm(name = name, nickName = nickName, boy = boy, id = id, dateOfBirth = dateOfBirth, sterilised = sterilised, rating = rating)
+            // 4.
+            realmTransaction.insert(pet)
         }
 
     }

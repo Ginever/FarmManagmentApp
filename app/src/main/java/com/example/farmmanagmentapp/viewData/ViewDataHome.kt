@@ -32,12 +32,13 @@ class ViewDataHome: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentViewDataHomeBinding.inflate(layoutInflater,container,false)
-
-        /*for (x in 1..10000){
+        /*lifecycleScope.launch{
+        for (x in 1..10000){
             animalDatabaseOperations.insertAnimal(name = x.toString(), nickName = "Nickname $x",boy = (x%2 == 1), sterilised = (x%4 < 2), rating = x%6F)
             if (x%100 == 0){
                 Log.d("Amount", x.toString())
             }
+        }
         }*/
 
         //Set up the animal adapter with the animal data

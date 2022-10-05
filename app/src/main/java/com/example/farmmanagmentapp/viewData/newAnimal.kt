@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.farmmanagmentapp.R
 import com.example.farmmanagmentapp.databinding.FragmentNewAnimalBinding
@@ -13,6 +14,7 @@ import com.example.farmmanagmentapp.realm.AnimalDatabaseOperations
 import com.google.android.material.slider.LabelFormatter
 import com.google.android.material.slider.RangeSlider
 import com.google.android.material.slider.Slider
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToInt
@@ -43,20 +45,23 @@ class newAnimal : Fragment() {
             saveAnimalFAB.setOnClickListener {
                 if (nameEditText.text.toString() != "") {
 
-                    //Save animal data to database
-                    animalDatabaseOperations.insertAnimal(
-                        name = nameEditText.text.toString(),
-                        nickName = nickNameEditText.text.toString(),
-                        boy = boy,
-                        dateOfBirth = dateFormatter(),
-                        sterilised = sterilisedCheckBox.isChecked,
-                        rating = ratingSlider.rating
-                    )
-                    Navigation.findNavController(it).navigate(R.id.action_global_veiwDataHome)
-                } else {
-                    //Error reporting
-                    nameEditTextLayout.error = "Name cannot be empty"
-                }
+                    lifecycleScope.launch {
+
+                        //Save animal data to database
+                        animalDatabaseOperations.insertAnimal(
+                            name = nameEditText.text.toString(),
+                            nickName = nickNameEditText.text.toString(),
+                            boy = boy,
+                            dateOfBirth = dateFormatter(),
+                            sterilised = sterilisedCheckBox.isChecked,
+                            rating = ratingSlider.rating
+                        )
+                        Navigation.findNavController(it).navigate(R.id.action_global_veiwDataHome)
+                    }
+                    } else {
+                        //Error reporting
+                        nameEditTextLayout.error = "Name cannot be empty"
+                    }
             }
 
             maleSelectorBtn.backgroundTintList = requireContext().getResources().getColorStateList(R.color.purple_500,null)
