@@ -24,6 +24,7 @@ import io.realm.exceptions.RealmMigrationNeededException
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
     lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+    private lateinit var config: RealmConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         //Startup backend service
         Realm.init(this)
 
-        val config = RealmConfiguration.Builder()
+        config = RealmConfiguration.Builder()
             .name("default-realm")
             .allowQueriesOnUiThread(true)
             .allowWritesOnUiThread(true)
@@ -43,7 +44,14 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
         Realm.setDefaultConfiguration(config)
 
-        drawerLayout = findViewById(R.id.drawerLayout)
+        //Delete all realm data
+        /*var realm:Realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        realm.deleteAll()
+        realm.commitTransaction()*/
+
+
+            drawerLayout = findViewById(R.id.drawerLayout)
         val navMenu = findViewById<NavigationView>(R.id.nav_menu)
 
         //Set up custom toolbar
@@ -63,15 +71,14 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.nav_main_menu ->{changeFragment(R.id.action_global_homeFragment)}
-            R.id.nav_view_data ->{changeFragment(R.id.action_global_veiwDataHome)}
-            R.id.nav_record_birth ->{changeFragment(R.id.action_global_birthMothersInfo)}
-            R.id.nav_mating ->{changeFragment(R.id.action_global_matingHome)}
-            R.id.nav_medicine ->{}
-            R.id.nav_mass_actions -> {changeFragment(R.id.action_global_massActionsHome)}
-            R.id.nav_feedback -> (changeFragment(R.id.action_global_feedbackHome))
+            R.id.nav_main_menu ->{changeFragment(R.id.action_global_homeFragment); drawerLayout.closeDrawers()}
+            R.id.nav_view_data ->{changeFragment(R.id.action_global_veiwDataHome); drawerLayout.closeDrawers()}
+            R.id.nav_record_birth ->{changeFragment(R.id.action_global_birthMothersInfo); drawerLayout.closeDrawers()}
+            R.id.nav_mating ->{changeFragment(R.id.action_global_matingHome); drawerLayout.closeDrawers()}
+            R.id.nav_medicine ->{changeFragment(R.id.action_global_medicineSelectAnimals); drawerLayout.closeDrawers()}
+            R.id.nav_mass_actions -> {changeFragment(R.id.action_global_massActionsHome); drawerLayout.closeDrawers()}
+            R.id.nav_feedback -> {changeFragment(R.id.action_global_feedbackHome); drawerLayout.closeDrawers()}
         }
-
         return true
     }
 

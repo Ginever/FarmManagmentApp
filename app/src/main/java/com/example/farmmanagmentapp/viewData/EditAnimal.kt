@@ -6,20 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.farmmanagmentapp.R
 import com.example.farmmanagmentapp.databinding.FragmentEditAnimalBinding
-import com.example.farmmanagmentapp.realm.AnimalDatabaseOperations
-import com.google.android.material.slider.RangeSlider
+import com.example.farmmanagmentapp.realm.animal.AnimalDatabaseOperations
 import kotlinx.coroutines.launch
-import kotlin.math.roundToInt
 
 class EditAnimal : Fragment() {
 
     var binding: FragmentEditAnimalBinding? = null
-    val animalDatabaseOperations = AnimalDatabaseOperations()
+    private val animalDatabaseOperations = AnimalDatabaseOperations()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +35,7 @@ class EditAnimal : Fragment() {
             Log.e("EditAnimal", "EditAnimal fragment did not receive traveler information", )
         } else {
             lifecycleScope.launch {
-                val animal = animalDatabaseOperations.retriveFilteredAnimalsById(ViewAnimalArgs.fromBundle(bundle).animalId)
+                val animal = animalDatabaseOperations.retrieveFilteredAnimalsById(ViewAnimalArgs.fromBundle(bundle).animalId)
                 binding?.apply {
 
                     //setting simple to set values
@@ -50,6 +47,8 @@ class EditAnimal : Fragment() {
 
                     //configureDatePicker
                     val date = animal.dateOfBirth
+
+                    //FIll date picker converting from dd/MM/yy to what it needs
                     datePicker.updateDate(date.subSequence(6,date.length).toString().toInt(),date.subSequence(3,5).toString().toInt()-1,date.subSequence(0,2).toString().toInt())
 
                     ratingSlider.rating = animal.rating

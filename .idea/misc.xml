@@ -23,10 +23,12 @@
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/drawable/triangle.xml" value="0.18" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/dfg.xml" value="0.2359375" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_add_medicine.xml" value="0.264" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_birth_mothers_info.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_bulk_add.xml" value="0.264" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_bulk_remove.xml" value="0.2" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_edit_animal.xml" value="0.25" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_edit_medicine.xml" value="0.18982471141513468" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_export_data.xml" value="0.4" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_feedback_home.xml" value="0.2" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_feedback_thank_you.xml" value="0.176" />
@@ -34,13 +36,17 @@
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_import_data.xml" value="0.264" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_mass_actions_home.xml" value="0.2" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_mating_home.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_new_animal.xml" value="0.264" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_medicine_select_animals.xml" value="0.264" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_medicine_select_medicine.xml" value="0.264" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_new_animal.xml" value="0.19923044035912782" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_test_pop_up.xml" value="0.2611060743427017" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_veiw_data_home.xml" value="0.2" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_view_animal.xml" value="0.264" />
-        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_view_data_home.xml" value="0.2" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/fragment_view_data_home.xml" value="0.3595744680851064" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/item.xml" value="0.6" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/item_animal.xml" value="0.4" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/item_display_medicine.xml" value="0.536" />
+        <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/item_medicine.xml" value="0.536" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/layout/toolbar.xml" value="0.6" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/menu/mainmenu.xml" value="0.2359375" />
         <entry key="..\:/Users/zacgi/OneDrive - KingsWay School/2022/L2DGT/App devlopment/FarmManagmentApp/app/src/main/res/menu/navigation_menu.xml" value="0.2359375" />

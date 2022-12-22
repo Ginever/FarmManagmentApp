@@ -10,46 +10,51 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
+import com.example.farmmanagmentapp.databinding.FragmentHomeBinding
 
 class homeFragment : Fragment() {
+
+    var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val rootView =  inflater.inflate(R.layout.fragment_home, container, false)
-        // Inflate the layout for this fragment
-        val viewDataBtn = rootView.findViewById<Button>(R.id.viewDataBtn)
-        val feedbackBtn = rootView.findViewById<Button>(R.id.feedbackBtn)
-        val massActionsBtn = rootView.findViewById<Button>(R.id.massActionsBtn)
-        val matingBtn = rootView.findViewById<Button>(R.id.matingBtn)
-        val birthBtn = rootView.findViewById<Button>(R.id.recordBirthBtn)
+        binding =FragmentHomeBinding.inflate(layoutInflater,container,false)
+        return binding?.root
+    }
 
-        //Navigation to view data
-        viewDataBtn.setOnClickListener {view: View ->
-            findNavController(view).navigate(R.id.action_homeFragment_to_veiwDataHome)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        //Navigation to feedback
-        feedbackBtn.setOnClickListener { view: View ->
-            findNavController(view).navigate(R.id.action_homeFragment_to_feedbackHome)
-        }
+        binding?.apply {
+            viewDataBtn.setOnClickListener { view: View ->
+                findNavController(view).navigate(R.id.action_homeFragment_to_veiwDataHome)
+            }
 
-        //Navigate to Mass actions
-        massActionsBtn.setOnClickListener { view: View ->
-            findNavController(view).navigate(R.id.action_homeFragment_to_massActionsHome)
-        }
+            //Navigation to feedback
+            feedbackBtn.setOnClickListener { view: View ->
+                findNavController(view).navigate(R.id.action_homeFragment_to_feedbackHome)
+            }
 
-        //Navigate to mating
-        matingBtn.setOnClickListener {
-            findNavController(it).navigate(R.id.action_homeFragment_to_matingHome)
-        }
+            //Navigate to Mass actions
+            massActionsBtn.setOnClickListener { view: View ->
+                findNavController(view).navigate(R.id.action_homeFragment_to_massActionsHome)
+            }
 
-        //Navigate to birth
-        birthBtn.setOnClickListener {
-            findNavController(it).navigate(R.id.action_homeFragment_to_birthMothersInfo)
+            //Navigate to mating
+            matingBtn.setOnClickListener {
+                findNavController(it).navigate(R.id.action_homeFragment_to_matingHome)
+            }
+
+            //Navigate to birth
+            recordBirthBtn.setOnClickListener {
+                findNavController(it).navigate(R.id.action_homeFragment_to_birthMothersInfo)
+            }
+            medicineBtn.setOnClickListener {
+                findNavController(it).navigate(R.id.action_homeFragment_to_medicineSelectAnimals)
+            }
         }
-        return rootView
     }
 }

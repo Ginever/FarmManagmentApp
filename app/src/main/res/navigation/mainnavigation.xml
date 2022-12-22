@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_homeFragment_to_birthMothersInfo"
             app:destination="@id/birthMothersInfo" />
+        <action
+            android:id="@+id/action_homeFragment_to_medicineSelectAnimals"
+            app:destination="@id/medicineSelectAnimals" />
     </fragment>
     <fragment
         android:id="@+id/feedbackHome"
@@ -164,6 +167,75 @@
         tools:layout="@layout/fragment_edit_animal" >
         <argument
             android:name="animalId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineSelectAnimals"
+        android:name="com.example.farmmanagmentapp.medicine.MedicineSelectAnimals"
+        android:label="fragment_medicine_select_animals"
+        tools:layout="@layout/fragment_medicine_select_animals" >
+        <action
+            android:id="@+id/action_medicineSelectAnimals_to_medicineSelectMedicine"
+            app:destination="@id/medicineSelectMedicine" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_medicineSelectAnimals"
+        app:destination="@id/medicineSelectAnimals" />
+    <fragment
+        android:id="@+id/medicineSelectMedicine"
+        android:name="com.example.farmmanagmentapp.medicine.medicineSelectMedicine"
+        android:label="fragment_medicine_select_medicine"
+        tools:layout="@layout/fragment_medicine_select_medicine" >
+        <argument
+            android:name="selectedAnimals"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_medicineSelectMedicine_to_addMedicine"
+            app:destination="@id/addMedicine" />
+        <action
+            android:id="@+id/action_medicineSelectMedicine_to_editMedicine"
+            app:destination="@id/editMedicine" />
+        <action
+            android:id="@+id/action_medicineSelectMedicine_to_medicineDosage"
+            app:destination="@id/medicineDosage" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMedicine"
+        android:name="com.example.farmmanagmentapp.medicine.addMedicine"
+        android:label="fragment_add_medicine"
+        tools:layout="@layout/fragment_add_medicine" >
+        <action
+            android:id="@+id/action_addMedicine_to_medicineSelectMedicine"
+            app:destination="@id/medicineSelectMedicine" />
+        <argument
+            android:name="selectedAnimals"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMedicine"
+        android:name="com.example.farmmanagmentapp.medicine.editMedicine"
+        android:label="fragment_edit_medicine"
+        tools:layout="@layout/fragment_edit_medicine" >
+        <argument
+            android:name="medicineId"
+            app:argType="string" />
+        <argument
+            android:name="selectedAnimals"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_editMedicine_to_medicineSelectMedicine"
+            app:destination="@id/medicineSelectMedicine" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineDosage"
+        android:name="com.example.farmmanagmentapp.medicine.medicineDosage"
+        android:label="fragment_medicine_dosage"
+        tools:layout="@layout/fragment_medicine_dosage" >
+        <argument
+            android:name="selectedAnimals"
+            app:argType="string[]" />
+        <argument
+            android:name="selectedMedicine"
             app:argType="string" />
     </fragment>
 </navigation>

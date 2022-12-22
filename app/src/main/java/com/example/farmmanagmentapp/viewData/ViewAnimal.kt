@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import com.example.farmmanagmentapp.R
 import com.example.farmmanagmentapp.databinding.FragmentViewAnimalBinding
-import com.example.farmmanagmentapp.realm.AnimalDatabaseOperations
+import com.example.farmmanagmentapp.realm.animal.AnimalDatabaseOperations
 import kotlinx.coroutines.launch
 
 
@@ -40,7 +40,7 @@ class ViewAnimal : Fragment() {
         } else {
             val args = ViewAnimalArgs.fromBundle(bundle)
             lifecycleScope.launch{
-                val animal = animalDatabaseOperations.retriveFilteredAnimalsById(args.animalId)
+                val animal = animalDatabaseOperations.retrieveFilteredAnimalsById(args.animalId)
                 binding?.apply {
                     //Setting text fields to animal values
                     nameText.text = animal.name

@@ -44,13 +44,13 @@
         android:textSize="@dimen/mainBtnTextSize"
         android:text="Mating"
         app:layout_constraintBottom_toTopOf="@+id/massActionsBtn"
-        app:layout_constraintEnd_toStartOf="@+id/MedicineBtn"
+        app:layout_constraintEnd_toStartOf="@+id/medicineBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewDataBtn" />
 
     <Button
-        android:id="@+id/MedicineBtn"
+        android:id="@+id/medicineBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/round_button"
